@@ -1,0 +1,32 @@
+<h1>Edit Listing</h1>
+  <a href="/listings/<%= @listing.id %>">Go back</a>
+
+<form action="/listings/<%= @listing.id %>" method="post">
+  <input type="hidden" name="_method" value="patch" />
+  <div>
+    <label for="">Address:</label>
+    <input type="text" name="listing[address]
+    "value="<%= @listing.address %>" />  
+  </div>
+  <div>
+    <label for="">Price:</label>
+    <input type="text" name="listing[price] 
+    "value="<%= @listing.price %>" />
+  </div>
+  <div>
+    <label for="">Bedrooms:</label>
+    <input type="text" name="listing[bedrooms] 
+    "value="<%= @listing.bedrooms %>" />
+  </div>
+  <div>
+    <label for="">Bathrooms:</label>
+    <input type="text" name="listing[bathrooms] 
+    "value="<%= @listing.bathrooms %>" />
+  </div>
+  <input type="submit" value="Edit Listing" />
+</form>
+<form action="/listings/<%= @listing.id %>/delete" method="post">
+  <input type="hidden" name="_method" value="delete" />  
+  <input id="mysubmit" type="submit" value="Delete Listing"
+
+  /></form>

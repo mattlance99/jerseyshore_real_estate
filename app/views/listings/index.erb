@@ -1,0 +1,9 @@
+<h1>All Listings</h1>
+<a href="/listings/new">Create new Listing</a>
+
+<ul>
+<% @listings.each do |listing| %>
+     <li><a href="/listings/<%= listing.id %>"><%= listing.address %>
+     </a> | <li><%= listing.price %></li>
+     <%end%>
+</ul>
