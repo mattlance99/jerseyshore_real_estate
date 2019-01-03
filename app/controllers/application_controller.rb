@@ -10,28 +10,12 @@ class ApplicationController < Sinatra::Base
     enable :sessions 
     set :session_secret, "testsecret"
   end
-  
-  get '/' do 
-    erb :welcome
-  end
-  
-  get '/signup' do
-    erb :signup
-  end 
-  
-  get "/login" do
-		erb :login
-	end
 
 	get "/logout" do
 		session.clear
 		redirect "/"
 	end
 	
-	get '/listings/new' do
-    erb :new
-  end
-  
 	post "/login" do
 		agent = Agent.find_by(:username => params[:username])
 		if agent && agent.authenticate(params[:password])
