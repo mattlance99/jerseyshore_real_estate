@@ -1,7 +1,9 @@
-<h1><%= @article.title %></h1>
-<%= @article.content %>
+<h1><%= @listing.address %></h1>
+<%= @listing.price %>
+<%= @listing.bedrooms %>
+<%= @listing.bathrooms %>
 
-<form method="post" action="/articles/<%= @article.id %>">
+<form method="post" action="/listings/<%= @lisitng.id %>">
   <input type="hidden" name="_method" value="delete" />
   <input type="submit" />
 </form>
