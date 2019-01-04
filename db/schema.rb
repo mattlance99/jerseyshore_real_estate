@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2018_12_31_013841) do
 
   create_table "listings", force: :cascade do |t|
     t.string "address"
-    t.integer "price"
+    t.string "price"
     t.integer "bedrooms"
     t.integer "bathrooms"
     t.integer "agent_id"
