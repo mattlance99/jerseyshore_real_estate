@@ -1,8 +1,23 @@
-<h1><%= @listing.address %></h1>
-<%= @listing.price %>
-<%= @listing.bedrooms %>
-<%= @listing.bathrooms %>
 
+
+
+
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>Specific Listing</title>
+ </head>
+ <body>
+
+  <h2>Address: <%= @listing.address %></h2>
+  <h2>Price: <%= @listing.price %></h2>
+  <h2>Bedrooms: <%= @listing.bedrooms %></h2>
+  <h2>Bathrooms: <%= @listing.bathrooms %></h2>
+
+ </body>
+ 
+</html>
 <form method="post" action="/listings/<%= @listing.id %>">
   <input type="hidden" name="_method" value="delete" />
   <input type="submit" />
