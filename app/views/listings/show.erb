@@ -3,7 +3,7 @@
 <%= @listing.bedrooms %>
 <%= @listing.bathrooms %>
 
-<form method="post" action="/listings/<%= @lisitng.id %>">
+<form method="post" action="/listings/<%= @listing.id %>">
   <input type="hidden" name="_method" value="delete" />
   <input type="submit" />
 </form>
