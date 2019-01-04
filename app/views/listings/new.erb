@@ -1,16 +1,16 @@
-
-
-<form action="/articles" method="post">
-  <ul>
-    <li>
-      <label for="title">Title</label>
-      <input id="title" type="text" name="title" />
-    </li>
-    <li>
-      <label for="content">Content</label>
-      <textarea id="content" type="text" name="content">
-      </textarea>
-    </li>
-  </ul>
-  <input type="submit" />
-</form>
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>Create a New Listing</title>
+ </head>
+ <body>
+   <form method="POST" action="/listings">
+     <label>Address: <input type="text" name="address" /></label><br/>
+     <label>Price: <input type="text" name="price" /></label><br/>
+     <label>Bedrooms: <input type="text" name="bedrooms" /></label><br/>
+     <label>Bathrooms: <input type="text" name="bathrooms" /></label><br/>
+     <input type="submit" id="Submit" />
+   </form>
+ </body>
+</html>
