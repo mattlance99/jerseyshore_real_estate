@@ -32,6 +32,7 @@ class ListingsController < ApplicationController
     @listing.price = params[:price]
     @listing.bedrooms = params[:bedrooms]
     @listing.bathrooms = params[:bathrooms]
+    @listing.agent_id = params[:agent_id]
     @listing.save
     redirect to "/listings/#{@listing.id}"
   end
