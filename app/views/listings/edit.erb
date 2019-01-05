@@ -7,10 +7,12 @@
  <body>
 <form action="/listings/<%=@listing.id%>" method="POST">
   <input id="hidden" type="hidden" name="_method" value="patch"> 
-     <label>Address: <input type="text" name="address" /></label><br/>
-     <label>Price: <input type="text" name="price" /></label><br/>
-     <label>Bedrooms: <input type="text" name="bedrooms" /></label><br/>
-     <label>Bathrooms: <input type="text" name="bathrooms" /></label><br/>
+     <label>Address: <input type="text" name="address" value="<%=@listing.address%>"/></label><br/>
+
+     
+     <label>Price: <input type="text" name="price" value="<%=@listing.price%>" /></label><br/>
+     <label>Bedrooms: <input type="text" name="bedrooms" value="<%=@listing.bedrooms%>"/></label><br/>
+     <label>Bathrooms: <input type="text" name="bathrooms" value="<%=@listing.bathrooms%>"/></label><br/>
      <input type="submit" id="Submit" />
    </form>
  </body>
