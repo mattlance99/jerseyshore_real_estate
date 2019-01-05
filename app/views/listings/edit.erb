@@ -1,15 +1,17 @@
-<form action="/articles/<%= @article.id %>" method="post">
-  <input type="hidden" name="_method" value="patch">
-  <ul>
-    <li>
-      <label for="title">Title</label>
-      <input id="title" type="text" name="article[title]" value="<%= @article.title %>" />
-    </li>
-    <li>
-      <label for="content">Content</label>
-      <textarea id="content" type="text" name="article[content]"  value="<%= @article.content %>">
-      </textarea>
-    </li>
-  </ul>
-  <input type="submit" />
-</form>
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>Create a New Listing</title>
+ </head>
+ <body>
+<form action="/listings/<%=@listing.id%>" method="POST">
+  <input id="hidden" type="hidden" name="_method" value="patch"> 
+     <label>Address: <input type="text" name="address" /></label><br/>
+     <label>Price: <input type="text" name="price" /></label><br/>
+     <label>Bedrooms: <input type="text" name="bedrooms" /></label><br/>
+     <label>Bathrooms: <input type="text" name="bathrooms" /></label><br/>
+     <input type="submit" id="Submit" />
+   </form>
+ </body>
+</html>
