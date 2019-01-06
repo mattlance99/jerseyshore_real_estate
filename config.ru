@@ -1,6 +1,4 @@
 require_relative './config/environment'
-#require_relative 'app/controllers/agents_controller'
-#require_relative 'app/controllers/listings_controller'
 
 require './config/environment'
 
