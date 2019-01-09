@@ -23,9 +23,19 @@ class ListingsController < ApplicationController
   
   get '/listings/:id/edit' do  
     @listing = Listing.find_by_id(params[:id])
-    binding.pry
     erb :'listings/edit'
   end
+  
+  get '/items' do
+    erb :'listings/items'
+  end
+  
+  post '/checkout' do
+    params[:item]
+    binding.pry
+    erb :'listings/display'
+  end
+  
  
   patch '/listings/:id' do
     @listing = Listing.find_by_id(params[:id])
