@@ -7,7 +7,7 @@ class ListingsController < ApplicationController
   end
   
   post '/listings' do
-    @listing = Listing.create(:address => params[:address], :price => params[:price], :bedrooms => params[:bedrooms], :bathrooms => params[:bathrooms],:agent_id => params[:agent_id],)
+    @listing = Listing.create(:address => params[:address], :price => params[:price], :bedrooms => params[:bedrooms], :bathrooms => params[:bathrooms],:agent_id => session[:id])
     redirect to "/listings/#{@listing.id}"
   end
   
@@ -32,7 +32,7 @@ class ListingsController < ApplicationController
     @listing.price = params[:price]
     @listing.bedrooms = params[:bedrooms]
     @listing.bathrooms = params[:bathrooms]
-    @listing.agent_id = params[:agent_id]
+    #@listing.agent_id = params[:agent_id]
     @listing.save
     redirect to "/listings/#{@listing.id}"
   end

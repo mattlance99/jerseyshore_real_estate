@@ -24,9 +24,9 @@ class SessionsController < ApplicationController
 	end
 	
 	post "/login" do
-		agent = Agent.find_by(:username => params[:username])
-		if agent && agent.authenticate(params[:password])
-			session[:agent_id] = agent.id
+		@agent = Agent.find_by(:username => params[:username])
+		if @agent && @agent.authenticate(params[:password])
+			session[:id] = @agent.id
 			redirect '/listings'
 		else
 			redirect "/failure"
@@ -34,12 +34,14 @@ class SessionsController < ApplicationController
 	end
   
 	post "/signup" do
-		agent = Agent.new(:username => params[:username], :password => params[:password])
-		if agent.save
+		@agent = Agent.new(:username => params[:username], :password => params[:password])
+		if @agent.save
+		  session[:id] = @agent.id
 			redirect "/login"
 		else
 			redirect "/failure"
 		end
 	end
+
 	
 end
