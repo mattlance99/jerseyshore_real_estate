@@ -16,6 +16,13 @@ class ListingsController < ApplicationController
     erb :'listings/index'
   end
   
+  get '/mylistings' do
+    number = session[:id]
+    @mylistings = Listing.all.find_all { |listing| listing.agent_id == 1}
+  
+    binding.pry
+  end 
+  
   get '/listings/:id' do
     @listing = Listing.find_by_id(params[:id])
     erb :'listings/show'
