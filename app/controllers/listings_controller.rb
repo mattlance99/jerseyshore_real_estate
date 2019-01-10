@@ -17,9 +17,7 @@ class ListingsController < ApplicationController
   end
   
   get '/mylistings' do
-    number = session[:id]
-    @mylistings = Listing.all.find_all { |listing| listing.agent_id == 1}
-  
+    @mylistings = Listing.all.find_all { |listing| listing.agent_id == session[:id] }
     binding.pry
   end 
   
