@@ -12,13 +12,14 @@ class ListingsController < ApplicationController
   end
   
   get '/listings' do
-    @listings = Listing.all
-    erb :'listings/index'
+    @mylistings = Listing.all.find_all { |listing| listing.agent_id == session[:id] }
+    erb :'listings/myindex'
   end
   
   get '/mylistings' do
     @mylistings = Listing.all.find_all { |listing| listing.agent_id == session[:id] }
-    binding.pry
+    erb :'listings/myindex'
+    
   end 
   
   get '/listings/:id' do

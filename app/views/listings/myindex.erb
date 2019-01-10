@@ -1,0 +1,16 @@
+<ul>
+  
+
+<% @mylistings.each do |listing| %>
+  <li>
+    <a href="/listings/<%= listing.id %>">
+      <%= listing.address %> 
+    </a>
+  </li>
+<% end %>
+<br>
+<br>
+<a href="/listings/new"><button>Add New Listing</button></a>
+<br><br><br>
+
+</ul>
